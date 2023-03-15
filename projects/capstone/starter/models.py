@@ -101,7 +101,7 @@ class Movies(db.Model):
     def format(self):
         movie_obj = {'movie_id': self.id, 'movie_title': self.title,
                      'release_date': self.release_date, 'genres': self.genres, 'image_link': self.image_link}
-        return f'<{movie_obj}>'
+        return movie_obj
 
 
 class Actors(db.Model):
@@ -134,4 +134,4 @@ class Actors(db.Model):
     def format(self):
         actor_obj = {'actor_id': self.id, 'actor_name': self.name,
                      'actor_age': self.age, 'actor_gender': self.gender, 'image_link': self.image_link}
-        return f'<{actor_obj}>'
+        return actor_obj

@@ -1,0 +1,44 @@
+{
+    "roles": {
+        "Casting Assistant": {
+            "description": "Can view actors and movies",
+            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InUyVHg3d2hnOUotdzJQWXN4SWNDMyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQta21sLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZWQwZGQ5MjNjODU0MjBiZjc5MWNkODIiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5MDc5NDcwNSwiZXhwIjoxNTkwODgxMDkzLCJhenAiOiJRZ21HdGg3MU9xbmRTVmxDSjZZSUFGaXI2dDJFQXQ0OCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.X9gnUlAo7-7ACg5zFpKCTj9eqIghdiSgSF4baKuCpSvPwliXLAALsmCo3IglsYU2jZkUvf4fO4SNCfkusw408bttcnZBZjryZznXLfBb4jyicCwU-jxof6p_IJy5PrYt-cHC2O37J6eluRDY4Bc416RqLdydFW6VL62Y4YkB-GtW17ie_d_v_H34YanKPf_UYGU-CFDn77dIU8uR0FgqKGUaWFVJk6rqjP3wsbdEQQQza-VLBqV7IIZSMrN5dO7TkNd78G08ErPBbsXPc5rBNR-ZdycVsxnB6qTyvmvWBPEDAnQT2_zHZuqV1akD45U5H090rjYCycolr2ip6QWNoA",
+            "permissions": [
+                "get:actor",
+                "get:actor-detail",
+                "get:movie",
+                "get:movie-detail"
+            ]
+        },
+        "Casting Director": {
+            "description": "All permissions a Casting Assistant has and add or delete an actor from the database and modify actors or movies",
+            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InUyVHg3d2hnOUotdzJQWXN4SWNDMyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQta21sLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZWQwZGQ2YzQ3OWFiODBjMGFhYTJhMjUiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5MDc5NDYzOCwiZXhwIjoxNTkwODgxMDI2LCJhenAiOiJRZ21HdGg3MU9xbmRTVmxDSjZZSUFGaXI2dDJFQXQ0OCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsInBvc3Q6YWN0b3JzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiLCJ2aWV3OmFjdG9ycyIsInZpZXc6bW92aWVzIl19.N4cUEwuhR92r9x5QojmKosswQ8X4loxauBu9tTZG48W1MEF20ZT7a3KyFqQWQY9aO6WQPx9aKeQBcZPZ7JZ5epSH32_gqeP74AMGSXpwrQdBGvqYetxhVhmCs12p3vlHp1kRB4BcvUdtbat7SH-dOzRkWcf6Z0YWb0GphUC0l6k4R32qP7jk3izdqO_nKVEhiM5Z9PNuvj5_FiLvCWwZ6Mxm7gtgAsenBOEPcZcajRQdj_BhDNj3xNlXw-pnsZwHrW0PhLxL3GXwzYYHC2GoyjfgUrggPmbIxAo57GXO3H4DW2PnFC946B_MsyDt9yBlm3dX64i7gKkBP7tau4hSOw",
+            "permissions": [
+                "get:actor",
+                "get:actor-detail",
+                "get:movie",
+                "get:movie-detail",
+                "delete:actor",
+                "post:actor",
+                "patch:actor",
+                "patch:movie"
+            ]
+        },
+        "Executive Producer": {
+            "description": "All permissions a Casting Director has and add or delete a movie from the database",
+            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkVvRzNSOXRzdkVOZDRtTmpmUUlMNCJ9.eyJpc3MiOiJodHRwczovL2Rldi04N2JiaHhsdXN0enVia2lxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDA0MGNiODExMTRhM2RhYjJmN2VkZTAiLCJhdWQiOiJjYXN0aW5nX2FnZW5jeSIsImlhdCI6MTY3ODgzNzkxMSwiZXhwIjoxNjc4ODQ1MTExLCJhenAiOiJka1EyVk1kS0FqRzQ2Ums3UmNqRXRmWFRnWDVMMGZnbCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZ2V0OmFjdG9yIiwiZ2V0OmFjdG9yLWRldGFpbCIsImdldDptb3ZpZSIsImdldDptb3ZpZS1kZXRhaWwiLCJwYXRjaDphY3RvciIsInBhdGNoOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiXX0.Yi81yl2_KIs6f5NsfNhTT1-xgzBICAYDsSy0CCqxJOEIVQ7ZaBAgizDIFL-xlZV13gpj_28NVeGGWd9aed6lU6xe6-xBIps6iWGqC5mbcgPjSOzK1VIwFttjJoIvYFPbLEwRlrv5hB4jUYP4sRFdVfJ-bBXZUiH6v7GPDixsU9dYRC04Pje-G-mlP2xFWwhGtZFbDqqrp_xzOvNNUJsPMYY9v4TW2WNtqRXTJWvHvuCUpRTm_B7AnlvzFTd6oyS-lznPZmIFJJ--dRCKSUVprjy6WrHml0wNNdwhcQD3vq-CL3XeoIYBWQoIQiRAqoOhxLaKeU-00eh-99mzLigKWQ",
+            "permissions": [
+                "get:actor",
+                "get:actor-detail",
+                "get:movie",
+                "get:movie-detail",
+                "delete:actor",
+                "post:actor",
+                "patch:actor",
+                "patch:movie",
+                "post:movie",
+                "delete:movie"
+            ]
+        }
+    }
+}
