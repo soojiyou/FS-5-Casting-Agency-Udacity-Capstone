@@ -68,6 +68,13 @@ def db_drop_and_create_all():
     )
 
     movie.insert()
+    actor = Actors(
+        name='actortest1',
+        age='23',
+        gender='female',
+        image_link='https://www.bing.com/th?id=OIP.M9AsZ7Sm6Qq-LXpY92Tt2AHaEK&w=180&h=185&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2'
+    )
+    actor.insert()
 
 
 class Movies(db.Model):

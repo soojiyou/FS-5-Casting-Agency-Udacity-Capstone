@@ -2,7 +2,7 @@
     "roles": {
         "Casting Assistant": {
             "description": "Can view actors and movies",
-            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InUyVHg3d2hnOUotdzJQWXN4SWNDMyJ9.eyJpc3MiOiJodHRwczovL2ZzbmQta21sLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw1ZWQwZGQ5MjNjODU0MjBiZjc5MWNkODIiLCJhdWQiOiJjYXBzdG9uZSIsImlhdCI6MTU5MDc5NDcwNSwiZXhwIjoxNTkwODgxMDkzLCJhenAiOiJRZ21HdGg3MU9xbmRTVmxDSjZZSUFGaXI2dDJFQXQ0OCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsidmlldzphY3RvcnMiLCJ2aWV3Om1vdmllcyJdfQ.X9gnUlAo7-7ACg5zFpKCTj9eqIghdiSgSF4baKuCpSvPwliXLAALsmCo3IglsYU2jZkUvf4fO4SNCfkusw408bttcnZBZjryZznXLfBb4jyicCwU-jxof6p_IJy5PrYt-cHC2O37J6eluRDY4Bc416RqLdydFW6VL62Y4YkB-GtW17ie_d_v_H34YanKPf_UYGU-CFDn77dIU8uR0FgqKGUaWFVJk6rqjP3wsbdEQQQza-VLBqV7IIZSMrN5dO7TkNd78G08ErPBbsXPc5rBNR-ZdycVsxnB6qTyvmvWBPEDAnQT2_zHZuqV1akD45U5H090rjYCycolr2ip6QWNoA",
+            "jwt_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkVvRzNSOXRzdkVOZDRtTmpmUUlMNCJ9.eyJpc3MiOiJodHRwczovL2Rldi04N2JiaHhsdXN0enVia2lxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDA0MGM4ZjgxOTg4MmYxNzBjYWNhOTciLCJhdWQiOiJjYXN0aW5nX2FnZW5jeSIsImlhdCI6MTY3ODgzNzAxNiwiZXhwIjoxNjc4ODQ0MjE2LCJhenAiOiJka1EyVk1kS0FqRzQ2Ums3UmNqRXRmWFRnWDVMMGZnbCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9yIiwiZ2V0OmFjdG9yLWRldGFpbCIsImdldDptb3ZpZSIsImdldDptb3ZpZS1kZXRhaWwiXX0.CjWHO_CMwn4D3gvgnhu37IVnfk3wUfejVMQYQyyOjwUynkgouf5n6qqPcygphAyYNcoF1Pbgn0amhnbaxQAOY5-HhCbUY9itXzM-nHBzeY7ctFtDCAltDeEHUZKLBBdafUIOyqgSGr9aIzBM1ZHxwuvCcooW74Nvzk4XliH0okqvUDsSrvz3KjXU4SJhTgYy8SRsHsfBC25FZBw6T7SOr0UFmzDQBjBLrJbfoJWVKZ_ANsexsfFasM8JMjJgHCobnaYNLu_Cl05OTuWoRr6I2wDeJGrH1KeH6mlyyG8wUV-458iq4KBl43bBOhK9YH1v4c1J4_AibGwPq2g5bD0KgQ",
             "permissions": [
                 "get:actor",
                 "get:actor-detail",

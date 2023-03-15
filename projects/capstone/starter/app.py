@@ -14,6 +14,9 @@ from auth.auth import AuthError, requires_auth
 # app = Flask(__name__)
 # setup_db(app)
 # CORS(app)
+def get_headers(token):
+    return {'Authorization': f'Bearer {token}'}
+
 
 def create_app(test_config=None):
     # create and configure the app
@@ -45,36 +48,42 @@ def create_app(test_config=None):
         return redirect('dev-87bbhxlustzubkiq.us.auth0.com/authorize?response_type=token&client_id=dkQ2VMdKAjG46Rk7RcjEtfXTgX5L0fgl')
 
     @app.route('/actors', methods=['GET'])
-    # @requires_auth('get:actor')
-    def get_actors():
+    @requires_auth('get:actor')
+    def get_actors(payload):
         actors_list = {}
         actors = Actors.query.all()
         if not actors:
             return abort(404)
+        try:
+            for actor in actors:
+                actors_list[actor.id] = actor.name
 
-        for actor in actors:
-            actors_list[actor.id] = actor.name
+            return jsonify({
+                "success": True,
+                "actors": actors_list,
+            }), 200
 
-        return jsonify({
-            "success": True,
-            "actors": actors_list,
-        }), 200
+        except Exception:
+            abort(422)
 
     @app.route('/movies', methods=['GET'])
-    # @requires_auth('get:movie')
-    def get_movies():
+    @requires_auth('get:movie')
+    def get_movies(payload):
         movies_list = {}
         movies = Movies.query.all()
+
         if not movies:
             return abort(404)
+        try:
+            for movie in movies:
+                movies_list[movie.id] = movie.title
 
-        for movie in movies:
-            movies_list[movie.id] = movie.title
-
-        return jsonify({
-            "success": True,
-            "movies": movies_list,
-        }), 200
+            return jsonify({
+                "success": True,
+                "movies": movies_list,
+            }), 200
+        except Exception:
+            abort(422)
 
     '''@Todo endpoint get /actor and /movie
         /actors/<int:actor_id>' : get a detail of selected actor
@@ -85,33 +94,35 @@ def create_app(test_config=None):
     @app.route('/actors/<int:actor_id>', methods=['GET'])
     @requires_auth('get:actor-detail')
     def get_actor_detail(payload, actor_id):
-        actor_detail = Actors.query.get(actor_id)
-        if not actor_detail:
-            return abort(404)
+        try:
+            actor_detail = Actors.query.get(actor_id)
+            if not actor_detail:
+                return abort(404)
+            else:
+                actor_data = actor_detail.format()
 
-        actor_data = actor_detail.format()
-
-        return jsonify({
-            "success": True,
-            "actor_deta": actor_data,
-        }), 200
+                return jsonify({
+                    "success": True,
+                    "actor_data": actor_data,
+                }), 200
+        except Exception:
+            abort(422)
 
     @app.route('/movies/<int:movie_id>', methods=['GET'])
     @requires_auth('get:movie-detail')
     def get_movie_detail(payload, movie_id):
-        # movie_data = {}
-        movie_detail = Movies.query.get(movie_id)
-        # movie_detail = Movies.query.all()
-        if not movie_detail:
-            return abort(404)
-
-        # movie_data = movie_detail.format()
-        # movie_data.append(movie_detail.format())
-        movie_data = movie_detail.format()
-        return jsonify({
-            "success": True,
-            "movie_deta": movie_data,
-        }), 200
+        try:
+            movie_detail = Movies.query.get(movie_id)
+            if not movie_detail:
+                return abort(404)
+            else:
+                movie_data = movie_detail.format()
+                return jsonify({
+                    "success": True,
+                    "movie_data": movie_data,
+                }), 200
+        except Exception:
+            abort(422)
 
     '''@Todo endpoint delete target /actor and /movie
         /actors/<int:actor_id>' : delete selected actor
@@ -131,7 +142,7 @@ def create_app(test_config=None):
 
             return jsonify({
                 'success': True,
-                'delete': actor_id,
+                'deleted': actor_id,
             }), 200
 
         except Exception:
@@ -140,7 +151,7 @@ def create_app(test_config=None):
     @app.route('/movies/<int:movie_id>', methods=['DELETE'])
     @requires_auth('delete:movie')
     def delete_movie(payload, movie_id):
-        target_movie = Actors.query.get(movie_id)
+        target_movie = Movies.query.get(movie_id)
         if not target_movie:
             abort(404)
 
@@ -149,7 +160,7 @@ def create_app(test_config=None):
 
             return jsonify({
                 'success': True,
-                'delete': movie_id,
+                'deleted': movie_id,
             }), 200
 
         except Exception:
@@ -323,12 +334,20 @@ def create_app(test_config=None):
                         "error": 400,
                         "message": "bad request"}), 400
 
+    # @app.errorhandler(AuthError)
+    # def not_authenticated(error):
+    #     return jsonify({
+    #         "success": False,
+    #         "error": 401,
+    #         "message": "authentication error"
+    #     }), 401
+
     @app.errorhandler(AuthError)
-    def not_authenticated(auth_error):
+    def auth_error(error):
         return jsonify({
             "success": False,
-            "error": auth_error.status_code,
-            "message": auth_error.error
+            "error": AuthError,
+            "message": "authentication error"
         }), 401
     return app
 
