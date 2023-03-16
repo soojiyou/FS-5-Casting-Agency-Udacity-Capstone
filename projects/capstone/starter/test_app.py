@@ -3,7 +3,6 @@ import os
 import unittest
 import json
 from flask_sqlalchemy import SQLAlchemy
-
 from app import create_app, get_headers
 from models import setup_db, Movies, Actors
 
@@ -51,7 +50,7 @@ class CapstoneTestCase(unittest.TestCase):
         self.test_actor_patch2 = {"title": "wrong param"}
 
         self.unauthorized_jwt = 'sggegw'
-        self.producer_jwt = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkVvRzNSOXRzdkVOZDRtTmpmUUlMNCJ9.eyJpc3MiOiJodHRwczovL2Rldi04N2JiaHhsdXN0enVia2lxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDA0MGNiODExMTRhM2RhYjJmN2VkZTAiLCJhdWQiOiJjYXN0aW5nX2FnZW5jeSIsImlhdCI6MTY3ODg2NTEyNSwiZXhwIjoxNjc4OTAxMTI1LCJhenAiOiJka1EyVk1kS0FqRzQ2Ums3UmNqRXRmWFRnWDVMMGZnbCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZ2V0OmFjdG9yIiwiZ2V0OmFjdG9yLWRldGFpbCIsImdldDptb3ZpZSIsImdldDptb3ZpZS1kZXRhaWwiLCJwYXRjaDphY3RvciIsInBhdGNoOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiXX0.A0U8DT0A34Jsd-FQ2VYF0fM263E_28m4Wbpcei3sppnyRNM0eRePm9v3ky8ycwG4Fz5GNA04hndO-6kpQWfpN6gcLwVwXaXtYM6mvldRlF5dzvQn_ocpOMXScQ2EcKk4mmDTLeQqkExG6_5udG76iY3nWjcv-XGieiDrNIDd0Wdul3Gg_C0VBydGW4iHsv9jwnHwecZzw0oAp3FuyiRhWzzje7Sm98XKUliEZUUBf56VIy9fHsL7z8N2Dyb8PHnu9p5dA1I3ILA127WPMYk9COmsZRtlatX5m-X4FoVKJj4I-zSZhNUK6dhF8mCQf0kYZm1uZT6Yrpas8-jEhTcbhA'
+        self.producer_jwt = 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkVvRzNSOXRzdkVOZDRtTmpmUUlMNCJ9.eyJpc3MiOiJodHRwczovL2Rldi04N2JiaHhsdXN0enVia2lxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2NDA0MGNiODExMTRhM2RhYjJmN2VkZTAiLCJhdWQiOiJjYXN0aW5nX2FnZW5jeSIsImlhdCI6MTY3ODk1ODQ5NCwiZXhwIjoxNjc4OTk0NDk0LCJhenAiOiJka1EyVk1kS0FqRzQ2Ums3UmNqRXRmWFRnWDVMMGZnbCIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9yIiwiZGVsZXRlOm1vdmllIiwiZ2V0OmFjdG9yIiwiZ2V0OmFjdG9yLWRldGFpbCIsImdldDptb3ZpZSIsImdldDptb3ZpZS1kZXRhaWwiLCJwYXRjaDphY3RvciIsInBhdGNoOm1vdmllIiwicG9zdDphY3RvciIsInBvc3Q6bW92aWUiXX0.RlmFt7XN0QXwmGX3PAoodZpkxYgQhiZweu1Q0LmNYRe9eU2C3cWnUjYEoa-kYEgW_5fvI2bGomv7GapSE36eorao9bfkitcw8sKv5DGbCC3C3KMlIoy_Zjhj-C07bBjGnKHL0v8Ys40m48x7SAXLLkgI_P_4BxaiOYmN1SE973gNMVOttFZYrVY-Z7aEIWFPjPTIpR5BqLGN6MF7W81GUL5dToLuxCoqWhDQIuIJJW0tAIv3soxkZFzg0ExZC89s-Aptst5IX6yCCB5RgZbOB1-_v_0XgCH5lynRZZR7D5sIXE9LBl0NrUc-PpePmTaKIVln7IW0HlXn4oSb2PKr7Q'
 
     def tearDown(self):
         """Executed after reach test"""
@@ -69,10 +68,21 @@ class CapstoneTestCase(unittest.TestCase):
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertTrue(data['success'])
-        movies = Movies.query.get(1)
-        movie_title = movies.title
+        # movies = Movies.query.get(1)
+        # movies_list = {}
+        # movie_id = 1
+        # movies = Movies.query.get(movie_id)
+        # movies_list = movies.title
 
-        self.assertEqual(data["movies"]["1"], movie_title)
+        movie = Movies.query.filter_by(id=1).first()
+        title = movie.title
+        # print(title)
+        # print(data)
+
+        # print(movies_list)
+        # movie_title = movies.title
+        # self.assertEqual(data["movies"]["1"])
+        self.assertEqual(data["movies"]["1"], title)
 
     def test_get_movie_list_err(self):
         auth_header = get_headers(self.unauthorized_jwt)
