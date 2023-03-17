@@ -1,4 +1,4 @@
-# FSND_Capstone.PS
+# FSND_Capstone
 ## Final project for Udacity Full Stack Web Dev Nanodegree
 The motivation for this project was to practice the skills and demonstrate knowledge of the material presented in the course.
 This app allows to create and manage movie list and actor list. There are two roles:
