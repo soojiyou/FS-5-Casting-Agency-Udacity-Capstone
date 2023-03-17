@@ -138,7 +138,7 @@ The API will return three error types when requests fail:
     },
     "success": true
 }
-	```
+```
 
 
 	
@@ -157,7 +157,7 @@ The API will return three error types when requests fail:
     },
     "success": true
 }
-	```
+```
 	
 #### GET /movies/<int:movie_id>
 * Get movie detail with specific id
@@ -178,7 +178,7 @@ The API will return three error types when requests fail:
     },
     "success": true
 }
-	```
+```
 #### GET /actors/<int:actor_id>
 * Get actor detail with specific id
 
@@ -198,7 +198,7 @@ The API will return three error types when requests fail:
     },
     "success": true
 }
-	```
+```
 	
 #### POST /movies
 * Creates a new movie.
@@ -218,7 +218,7 @@ The API will return three error types when requests fail:
     "release_date": "20230320",
     "image_link": "https://www.bing.com/th?id=OIP.M9AsZ7Sm6Qq-LXpY92Tt2AHaEK&w=180&h=185&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"
 }'
-    ```
+```
     
 * **Example Response:**
     ```bash
@@ -232,7 +232,7 @@ The API will return three error types when requests fail:
     },
     "success": true
 }
-    ```
+	```
 
 #### POST /actors
 * Creates a new actor.
@@ -311,7 +311,7 @@ The API will return three error types when requests fail:
 		--data-raw '{
 			"title": "patch movie test"
         }'
-  ```
+  	```
   
 * **Example Response:**
     ```json
