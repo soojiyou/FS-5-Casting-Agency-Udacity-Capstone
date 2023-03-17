@@ -306,13 +306,19 @@ def create_app(test_config=None):
 # Error Handling
 
 
-    @app.errorhandler(422)
-    def unprocessable(error):
+    @app.errorhandler(400)
+    def bad_request(error):
+        return jsonify({"success": False,
+                        "error": 400,
+                        "message": "bad request"}), 400
+
+    @app.errorhandler(401)
+    def auth_error(error):
         return jsonify({
             "success": False,
-            "error": 422,
-            "message": "unprocessable"
-        }), 422
+            "error": 401,
+            "message": "authentication error"
+        }), 401
 
     @app.errorhandler(404)
     def not_found(error):
@@ -328,27 +334,12 @@ def create_app(test_config=None):
                      "message": "unprocessable"}), 422
         )
 
-    @app.errorhandler(400)
+    @app.errorhandler(500)
     def bad_request(error):
         return jsonify({"success": False,
-                        "error": 400,
-                        "message": "bad request"}), 400
+                        "error": 500,
+                        "message": "Internal Server Error"}), 500
 
-    # @app.errorhandler(AuthError)
-    # def not_authenticated(error):
-    #     return jsonify({
-    #         "success": False,
-    #         "error": 401,
-    #         "message": "authentication error"
-    #     }), 401
-
-    @app.errorhandler(AuthError)
-    def auth_error(error):
-        return jsonify({
-            "success": False,
-            "error": AuthError,
-            "message": "authentication error"
-        }), 401
     return app
 
 

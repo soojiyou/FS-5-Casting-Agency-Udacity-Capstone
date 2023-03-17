@@ -23,6 +23,14 @@ class CapstoneTestCase(unittest.TestCase):
         self.producer_jwt = os.environ['PRODUCER_TOKEN']
         setup_db(self.app)
 
+        # # Set up authentication tokens with auth0_config.json
+        # with open('auth_config.json', 'r') as f:
+        #     self.auth = json.loads(f.read())
+
+        # self.assistant_jwt = self.auth["roles"]["Casting Assistant"]["jwt_token"]
+        # self.director_jwt = self.auth["roles"]["Casting Director"]["jwt_token"]
+        # self.producer_jwt = self.auth["roles"]["Executive Producer"]["jwt_token"]
+
         # test case input for movie
 
         self.test_movie_post1 = {
