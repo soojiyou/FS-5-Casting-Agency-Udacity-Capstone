@@ -37,6 +37,7 @@ First, a database must be created to restore the sql database provided.
 createdb capstone
 ```
 create simple database with model.py.
+
 The database is reset for each run.
 
 
