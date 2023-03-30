@@ -38,6 +38,8 @@ createdb capstone
 ```
 create simple database with model.py.
 The database is reset for each run.
+
+
 Configure the database path to connect to this new locally created postgres database:
 ```bash
 export DATABASE_URL=<local_database_url>
