@@ -1,28 +1,48 @@
 # Full Stack Project 5 - Casting-Agency-Udacity-Capstone
 
+## Project Overview:
+Developed a Casting Agency Application as part of the Full Stack Web Developer Nanodegree program at Udacity. The application features secure API endpoints for managing actors and movies, role-based access control (RBAC), and is deployed using the Heroku cloud platform.
+
 ## Goal:
-The goal of the Full Stack Nanodegree Capstone project is to challenge the students to utilize all the skills and concepts learned throughout the course to build a complete API from scratch and deploy it.
+The primary goal of the Full Stack Nanodegree Capstone project is to challenge students to apply all the skills and concepts learned throughout the course, building a complete API from scratch, and deploying it to a cloud platform.
 
 ## Introduction:
-The project requires the students to demonstrate their proficiency in various areas including coding in Python 3, relational database architecture, modeling data objects with SQLAlchemy, developing a Flask API, authentication and access, testing Flask applications, and deploying applications.
+The project required demonstrating proficiency in various areas, including:
 
-## Tech Stacks:
+Coding in Python 3
+Relational database architecture
+Modeling data objects with SQLAlchemy
+Developing a Flask API
+Implementing authentication and access with Auth0
+Testing Flask applications
+Deploying applications to cloud platforms
 
-* Coding in Python 3
-* Relational Database Architecture
-* Modeling Data Objects with SQLAlchemy
+## Tech Stack:
+
+* Python 3
+* Flask
+* SQLAlchemy
 * Internet Protocols and Communication
-* Developing a Flask API
-* Authentication and Access
-* Authentication with Auth0
-* Authentication in Flask
+* Auth0
 * Role-Based Access Control (RBAC)
-* Testing Flask Applications
-* Deploying Applications
+* Heroku (cloud platform)
 
+## Project Rubric:
+The project rubric consisted of five sections corresponding to each course in the Nanodegree, plus a sixth section for code quality and documentation. The general specifications included building an API on any topic, modeling the data, and making it accessible via the API. The optional Casting Agency Specs provided more detailed requirements for the API structure.
 
-The students will use Python 3, Flask, and SQLAlchemy to build the API. They will also learn about authentication and access using Auth0 and role-based access control (RBAC). Testing the Flask applications and deploying the applications will also be covered.
+## Key Features:
 
-The project rubric includes five sections, one for each course in the Nanodegree, and a fifth section for code quality and documentation. There are also general specifications that the students must follow, including building an API about any topic, modeling the data, and making it accessible via the API. The optional Casting Agency Specs provide more detailed requirements for the API structure.
+* Designed and secured all API endpoints for the application
+* Architected relational database models in Python using SQLAlchemy for database queries
+* Utilized REST APIs to structure endpoints that respond to four HTTP methods with error handling
+* Implemented Role-Based Authentication and role-based access control (RBAC) in a Flask application
+* Conducted extensive testing for expected success and error behavior of each endpoint using the unittest library
+* Integrated Auth0 for third-party authentication with role-based access control (RBAC)
+* Deployed the application using Heroku
 
-Lastly, the students will learn how to deploy their application to a cloud platform, such as Heroku or Render.
+## Achievements:
+
+* Successfully designed a secure and functional Casting Agency Application
+* Implemented role-based access control for improved security and user management
+* Utilized modern web development techniques and best practices
+* Deployed the application using Heroku for easy access and updates
