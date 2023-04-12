@@ -1,10 +1,10 @@
 # Full Stack Project 5 - Casting-Agency-Udacity-Capstone
 
 ## Project Overview:
-Developed a Casting Agency Application as part of the Full Stack Web Developer Nanodegree program at Udacity. The application features secure API endpoints for managing actors and movies, role-based access control (RBAC), and is deployed using the Heroku cloud platform.
+Developed a Casting Agency Application as part of the Full Stack Web Developer Nanodegree program at Udacity. The application features secure API endpoints for managing actors and movies, role-based access control (RBAC).
 
 ## Goal:
-The primary goal of the Full Stack Nanodegree Capstone project is to challenge students to apply all the skills and concepts learned throughout the course, building a complete API from scratch, and deploying it to a cloud platform.
+The primary goal of the Full Stack Nanodegree Capstone project is to challenge students to apply all the skills and concepts learned throughout the course, building a complete API from scratch.
 
 ## Introduction:
 The project required demonstrating proficiency in various areas, including:
@@ -15,7 +15,7 @@ The project required demonstrating proficiency in various areas, including:
 * Developing a Flask API
 * Implementing authentication and access with Auth0
 * Testing Flask applications
-* Deploying applications to cloud platforms
+
 
 ## Tech Stack:
 
@@ -38,11 +38,15 @@ The project rubric consisted of five sections corresponding to each course in th
 * Implemented Role-Based Authentication and role-based access control (RBAC) in a Flask application
 * Conducted extensive testing for expected success and error behavior of each endpoint using the unittest library
 * Integrated Auth0 for third-party authentication with role-based access control (RBAC)
-* Deployed the application using Heroku
+
 
 ## Achievements:
 
 * Successfully designed a secure and functional Casting Agency Application
 * Implemented role-based access control for improved security and user management
 * Utilized modern web development techniques and best practices
-* Deployed the application using Heroku for easy access and updates
+
+
+## Memo for Advanced App in Future
+* Make the frontend.
+* Deploy app.
