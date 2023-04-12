@@ -9,13 +9,13 @@ The primary goal of the Full Stack Nanodegree Capstone project is to challenge s
 ## Introduction:
 The project required demonstrating proficiency in various areas, including:
 
-Coding in Python 3
-Relational database architecture
-Modeling data objects with SQLAlchemy
-Developing a Flask API
-Implementing authentication and access with Auth0
-Testing Flask applications
-Deploying applications to cloud platforms
+* Coding in Python 3
+* Relational database architecture
+* Modeling data objects with SQLAlchemy
+* Developing a Flask API
+* Implementing authentication and access with Auth0
+* Testing Flask applications
+* Deploying applications to cloud platforms
 
 ## Tech Stack:
 
